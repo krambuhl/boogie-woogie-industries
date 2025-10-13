@@ -6,9 +6,10 @@
 }
 
 .marqueeWrapper  {
-  height: 100vh;
+  height: 100%;
   display: flex;
   width: 100%;
   align-items: center;
   justify-content: center;
+  padding-bottom: 6rem;
 }
