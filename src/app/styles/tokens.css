@@ -1,0 +1,75 @@
+:root {
+  /* palette */
+  --palette-lavender: lch(38.6 38.2 298.9);
+  --palette-violet: lch(62.4 46.7 310.1);
+  --palette-red: lch(50.5 68.4 37.2);
+  --palette-orange: lch(68.3 74.1 57.9);
+  --palette-yellow: lch(78.4 70.2 79.4);
+  --palette-green: lch(57.9 49.8 138.8);
+  --palette-teal: lch(67.2 34.5 185.3);
+  --palette-blue: lch(48.3 61.7 266.7);
+
+  /* active palette */
+  --palette-active: var(--palette-violet);
+
+  /* greys */
+  --grey-000: lch(3 0 0);
+  --grey-100: lch(8 0 0);
+  --grey-200: lch(12 0 0);
+  --grey-300: lch(22 0 0);
+  --grey-400: lch(36 0 0);
+  --grey-500: lch(52 0 0);
+  --grey-600: lch(65 0 0);
+  --grey-700: lch(74 0 0);
+  --grey-800: lch(82 0 0);
+  --grey-900: lch(88 0 0);
+  --grey-1000: lch(95 0 0);
+
+  /* bg */
+  --bg-page: light-dark(var(--grey-1000), var(--grey-000));
+  --bg-base: light-dark(var(--grey-900), var(--grey-100));
+  --bg-elevated: light-dark(var(--grey-800), var(--grey-200));
+
+  /* content */
+  --content-regular: light-dark(var(--grey-200), var(--grey-1000));
+  --content-muted: light-dark(var(--grey-400), var(--grey-600));
+  --content-primary: light-dark(
+    lch(from var(--palette-active) clamp(0, c, 30) c h),
+    lch(from var(--palette-active) clamp(70, c, 100) c h)
+  )
+
+  /* border */
+  --border-regular: light-dark(lch(from var(--grey-100) l c h / 0.5), lch(from var(--grey-900) l c h / 0.5));
+  --border-muted: light-dark(lch(from var(--grey-200) l c h / 0.3), lch(from var(--grey-800) l c h / 0.3));
+
+  /* inverted */
+  --inverted-surface: light-dark(var(--grey-100), var(--grey-900));
+  --inverted-regular: light-dark(var(--grey-1000), var(--grey-200));
+  --inverted-muted: light-dark(var(--grey-600), var(--grey-400));
+
+  /* primary */
+  --primary-surface: light-dark(
+    lch(from var(--palette-active) clamp(0, c, 40) c h),
+    lch(from var(--palette-active) clamp(60, c, 100) c h)
+  );
+  --primary-regular: light-dark(var(--grey-1000), var(--grey-1000));
+  --primary-muted: light-dark(
+    lch(from var(--grey-1000) l c h / 0.6),
+    lch(from var(--grey-1000) l c h / 0.6)
+  );
+
+  /* surface */
+  --rich-surface: light-dark(
+    lch(from var(--palette-active) 30 calc(clamp(30, c, 100) * 0.6) h),
+    lch(from var(--palette-active) 20 calc(clamp(30, c, 100) * 0.6) h)
+  );
+  --rich-action: light-dark(
+    lch(from var(--palette-active) 90 c h),
+    lch(from var(--palette-active) 85 c h)
+  );
+  --rich-regular: light-dark(var(--grey-1000), var(--grey-1000));
+  --rich-muted: light-dark(
+    lch(from var(--grey-1000) l c h / 0.6),
+    lch(from var(--grey-1000) l c h / 0.6)
+  );
+}

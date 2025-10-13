@@ -1,0 +1,129 @@
+@keyframes hue-rotate {
+  0% { background-position: 0 0; }
+  100% { background-position: 0 800cqb; }
+}
+
+@keyframes mesh-blob-one {
+  0%, 100% { background-size: 130% 80%; background-position: -200% 0%; }
+  30% { background-size: 120% 90%; background-position: -100% 200%; }
+  60% { background-size: 180% 120%; background-position: 50% 150%; }
+}
+
+@keyframes mesh-blob-two {
+  0%, 100% { background-size: 80% 90%; background-position: 30% -100%; }
+  30% { background-size: 90% 110%; background-position: 50% 200%; }
+  60% { background-size: 70% 95%; background-position: -50% -50%; }
+}
+
+@keyframes mesh-blob-three {
+  0%, 100% { background-size: 90% 80%; background-position: -200% 90%; }
+  30% { background-size: 120% 90%; background-position: 200% -200%; }
+  60% { background-size: 180% 120%; background-position: 0% 150%; }
+}
+
+@keyframes grain {
+  0%, 100% { filter: url(#noise1); }
+  50% { filter: url(#noise2); }
+}
+
+.root {
+  container-type: inline-size;
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background: linear-gradient(
+    var(--palette-lavender),
+    var(--palette-violet),
+    var(--palette-red),
+    var(--palette-orange),
+    var(--palette-yellow),
+    var(--palette-green),
+    var(--palette-teal),
+    var(--palette-blue),
+    var(--palette-lavender)
+  );
+  background-size: 800% 800%;
+  background-repeat: repeat;
+  animation: hue-rotate 12s infinite linear;
+}
+
+.meshBlobOne {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    var(--palette-red),
+    var(--palette-orange),
+    var(--palette-yellow),
+    lch(from var(--palette-yellow) l c h / 0) 65%
+  );
+  background-repeat: repeat;
+  mix-blend-mode: lighten;
+  animation: mesh-blob-one 21.3s infinite;
+}
+
+.meshBlobTwo {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    var(--palette-blue),
+    var(--palette-lavender),
+    var(--palette-violet),
+    lch(from var(--palette-red) l c h / 0) 65%
+  );
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  mix-blend-mode: overlay;
+  animation: mesh-blob-two 17.61s infinite;
+}
+
+.meshBlobThree {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: radial-gradient(
+    var(--palette-green),
+    var(--palette-teal),
+    var(--palette-blue),
+    lch(from var(--palette-lavender) l c h / 0) 65%
+  );
+  background-size: 100% 100%;
+  background-repeat: repeat;
+  mix-blend-mode: lighten;
+  animation: mesh-blob-three 19.31s infinite;
+}
+
+.blur {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(100px);
+}
+
+.grain {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url(https://grainy-gradients.vercel.app/noise.svg);
+  mix-blend-mode: luminosity;
+}
+
+.content {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
