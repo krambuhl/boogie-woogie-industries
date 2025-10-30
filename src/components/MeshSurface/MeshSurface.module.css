@@ -16,7 +16,7 @@
 }
 
 @keyframes mesh-blob-three {
-  0%, 100% { background-size: 90% 80%; background-position: -200% 90%; }
+  0%, 100% { background-size: 120% 110%; background-position: -200% 90%; }
   30% { background-size: 120% 90%; background-position: 200% -200%; }
   60% { background-size: 180% 120%; background-position: 0% 150%; }
 }
@@ -27,13 +27,15 @@
 }
 
 .root {
-  --margin: clamp(1rem, 2vw, 4rem);
+  --margin: clamp(0.25rem, 4vw, 12rem);
 
   container-type: inline-size;
   position: relative;
   margin: var(--margin);
   width: calc(100% - var(--margin) * 2);
   height: calc(100% - var(--margin) * 2);
+  max-width: 800px;
+  max-height: min(90vw, 800px);
   overflow: hidden;
   background: linear-gradient(
     var(--palette-lavender),
@@ -49,7 +51,7 @@
   background-size: 800% 800%;
   background-repeat: repeat;
   animation: hue-rotate 12s infinite linear;
-  border-radius: clamp(1rem, 2vw, 2rem);
+  border-radius: clamp(1rem, 6vw, 12rem);
 }
 
 .meshBlobOne {
@@ -99,21 +101,30 @@
   animation: mesh-blob-three 19.31s infinite;
 }
 
+.shadow {
+  position: absolute;
+  inset: 0;
+  box-shadow: inset 0 0 0.5rem var(--grey-000), inset 0 0 2rem var(--grey-000);
+  mix-blend-mode: overlay;
+  border-radius: clamp(1rem, 6vw, 12rem);
+}
+
 .blur {
   position: absolute;
   inset: 0;
+  /* backdrop-filter: blur(10px); */
 }
 
 .grain {
   position: absolute;
   inset: 0;
-  mix-blend-mode: luminosity;
+  /* mix-blend-mode: luminosity; */
   animation: grain 0.3s infinite;
 }
 
 .content {
   position: absolute;
   inset: 0;
-  mix-blend-mode: overlay;
   opacity: 1;
+  color: var(--grey-1000);
 }

@@ -7,6 +7,7 @@ export default function MeshSurface({ children }: ChildrenProps) {
       <div className={styles.meshBlobOne} />
       <div className={styles.meshBlobTwo} />
       <div className={styles.meshBlobThree} />
+      <div className={styles.shadow} />
       <div className={styles.blur} />
       <div className={styles.grain} />
       <div className={styles.content}>{children}</div>
