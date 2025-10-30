@@ -51,7 +51,7 @@
   background-size: 800% 800%;
   background-repeat: repeat;
   animation: hue-rotate 12s infinite linear;
-  border-radius: clamp(1rem, 6vw, 12rem);
+  border-radius: clamp(2rem, 6vw, 18rem);
 }
 
 .meshBlobOne {
@@ -118,7 +118,7 @@
 .grain {
   position: absolute;
   inset: 0;
-  /* mix-blend-mode: luminosity; */
+  mix-blend-mode: luminosity;
   animation: grain 0.3s infinite;
 }
 
