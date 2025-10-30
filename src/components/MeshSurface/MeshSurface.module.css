@@ -27,10 +27,13 @@
 }
 
 .root {
+  --margin: clamp(1rem, 2vw, 4rem);
+
   container-type: inline-size;
   position: relative;
-  width: 100%;
-  height: 100%;
+  margin: var(--margin);
+  width: calc(100% - var(--margin) * 2);
+  height: calc(100% - var(--margin) * 2);
   overflow: hidden;
   background: linear-gradient(
     var(--palette-lavender),
@@ -46,14 +49,12 @@
   background-size: 800% 800%;
   background-repeat: repeat;
   animation: hue-rotate 12s infinite linear;
+  border-radius: clamp(1rem, 2vw, 2rem);
 }
 
 .meshBlobOne {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: radial-gradient(
     var(--palette-red),
     var(--palette-orange),
@@ -85,10 +86,7 @@
 
 .meshBlobThree {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   background: radial-gradient(
     var(--palette-green),
     var(--palette-teal),
@@ -103,29 +101,19 @@
 
 .blur {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  backdrop-filter: blur(100px);
+  inset: 0;
 }
 
 .grain {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: url(https://grainy-gradients.vercel.app/noise.svg);
+  inset: 0;
   mix-blend-mode: luminosity;
+  animation: grain 0.3s infinite;
 }
 
 .content {
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+  inset: 0;
   mix-blend-mode: overlay;
   opacity: 1;
 }
